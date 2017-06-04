@@ -1,55 +1,39 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-	<title>NY Times Search</title>
-</head>
-<body>
-
-  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script type="text/javascript">
-
-var APIKey = "62f9bd7b35d4415e9f9371c8d60faf78";
-
-var queryURL= "https://api.nytimes.com/svc/search/v2/articlesearch.json" + APIKey;
-$.ajax({
-  url: queryURL,
-  method: 'GET',
-}).done(function(result) {
-  console.log(result);
-});
-
-      // var queryURL = "https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=<your-api-key> 2>/dev/null" + APIKey;
 
 
-      // $.ajax({
-      //   url: queryURL,
-      //   method: "GET"
-      // })
-
-      // .done(function(response) {
-
-      // console.log(response);
-
-</script>
-
-</body>
-=======
 <!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NY Times Search</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
   </head>
   <body>
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script type="text/javascript">
 
+var endpoint = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?',
+        params ='a49e8a22035943e9bb2f4928fe15d8fe';
+
+
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url += '?' + $.param({
+  'api-key': "a49e8a22035943e9bb2f4928fe15d8fe"
+});
+
+$.ajax({
+  url: url,
+  method: 'GET',
+}).then(function(result) {
+  console.log(result);
+});
+
   </script>
+
+
+
     <header id="masthead">
       <div class="container">
        
@@ -67,5 +51,5 @@ $.ajax({
       </div>
     </footer>
   </body>
->>>>>>> ed19c1b9ad2ecf7f647523e1d55dc18ab8e7a5f3
+
 </html>
